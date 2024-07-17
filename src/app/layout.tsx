@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora, Space_Grotesk, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"], variable: '--font-sora' });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: '--font-space-grotesk' });
+const sourceCodePro = Source_Code_Pro({ subsets: ["latin"], variable: '--font-code' });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${sora.variable} ${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans`}>{children}</body>
     </html>
   );
 }
