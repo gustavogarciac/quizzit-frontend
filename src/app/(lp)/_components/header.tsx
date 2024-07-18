@@ -48,7 +48,9 @@ export const Header = () => {
         <Button variant={'theme'}>Sign in</Button>
       </div>
 
-      <MobileSidebar />
+      <div className="block md:hidden">
+        <MobileSidebar />
+      </div>
     </header>
   )
 }

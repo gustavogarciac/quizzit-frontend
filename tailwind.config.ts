@@ -95,6 +95,9 @@ const config = {
         grotesk: ['var(--font-space-grotesk)', 'sans-serif'],
         code: ['var(--font-code)', 'monospace'],
       },
+      blur: {
+        xxl: '130px',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
