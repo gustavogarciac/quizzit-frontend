@@ -66,4 +66,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  ::-webkit-scrollbar {
+    @apply bg-background w-3;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-6 rounded-lg;
+  }
 }

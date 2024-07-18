@@ -8,7 +8,7 @@ import { MobileSidebar } from './mobile-sidebar'
 
 export const Header = () => {
   return (
-    <header className="flex items-center justify-between gap-2 border-b px-7 py-4 lg:px-20 lg:py-6">
+    <header className="flex items-center justify-between gap-2 border-b px-7 py-6 lg:px-20 lg:py-6">
       <Logo />
 
       <nav className="hidden flex-row items-center gap-8 md:flex">
