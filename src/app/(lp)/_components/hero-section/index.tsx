@@ -2,13 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 
 import { Button } from '@/components/ui/button'
+import { Container } from '@/components/ui/container'
 
 import { HeroBanner } from './_components/hero-banner'
 import { HeroWidget } from './_components/hero-widget'
 
 export const HeroSection = () => {
   return (
-    <section className="mx-auto max-w-[100rem] border pb-16">
+    <Container>
       <div className="relative mt-28 space-y-24 bg-[url('/assets/bg.png')] bg-center">
         {/* Hero Title */}
         <div className="space-y-5">
@@ -53,6 +54,6 @@ export const HeroSection = () => {
 
         <HeroWidget />
       </div>
-    </section>
+    </Container>
   )
 }
