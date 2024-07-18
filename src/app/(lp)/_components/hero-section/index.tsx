@@ -16,16 +16,18 @@ export const HeroSection = () => {
           <div className="relative mx-auto w-fit">
             <h1 className="text-center text-[3.5rem] font-semibold leading-[4rem] tracking-tight">
               Explore possibilities and <br /> be an outstanding student with
-              Quizzit
+              <div className="relative ml-3.5 inline-block">
+                {' '}
+                Quizzit
+                <Image
+                  src={'/assets/curve.png'}
+                  width={150}
+                  height={10}
+                  alt="curve"
+                  className="ml-auto"
+                />
+              </div>
             </h1>
-
-            <Image
-              src={'/assets/curve.png'}
-              width={150}
-              height={10}
-              alt="curve"
-              className="ml-auto"
-            />
           </div>
 
           <p className="mx-auto max-w-[70%] text-center text-lg text-muted-foreground">
