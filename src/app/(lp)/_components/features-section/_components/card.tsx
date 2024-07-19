@@ -18,7 +18,7 @@ export const FeatureCard = ({
 }: Props) => {
   const Cont = () => {
     return (
-      <div className="bg-neutral-8 group relative flex min-h-72 flex-col overflow-hidden rounded-2xl p-6 transition-shadow hover:shadow-md">
+      <div className="group relative flex min-h-72 flex-col overflow-hidden rounded-2xl bg-neutral-8 p-6 transition-shadow hover:shadow-md">
         <div className="h-full flex-1">
           <h3 className="text-xl font-semibold">{title}</h3>
 
@@ -59,7 +59,7 @@ export const FeatureCard = ({
 
 const FeaturedCard = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="from-accents-1 via-accents-3 to-accents-6 rounded-2xl bg-gradient-to-tl p-px">
+    <div className="rounded-2xl bg-gradient-to-tl from-accents-1 via-accents-3 to-accents-6 p-px">
       {children}
     </div>
   )

@@ -48,7 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     if (variant === 'theme') {
       return (
-        <div className="from-accents-1 via-accents-6 to-accents-5 group relative rounded-md rounded-tr-[15px] bg-gradient-to-tr p-px">
+        <div className="group relative rounded-md rounded-tr-[15px] bg-gradient-to-tr from-accents-1 via-accents-6 to-accents-5 p-px">
           <Comp
             className={cn(buttonVariants({ variant, size, className }))}
             ref={ref}

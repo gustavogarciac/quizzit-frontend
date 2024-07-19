@@ -8,13 +8,13 @@ export const HeroWidget = () => {
   const { scrollYProgress } = useScroll()
   return (
     <motion.div
-      className="border-neutral-6 bg-neutral-5 hidden w-fit flex-row gap-4 rounded-md border bg-opacity-20 bg-clip-padding p-5 backdrop-blur-xl backdrop-filter"
+      className="hidden w-fit flex-row gap-4 rounded-md border border-neutral-6 bg-neutral-5 bg-opacity-20 bg-clip-padding p-5 backdrop-blur-xl backdrop-filter"
       style={{ scaleY: scrollYProgress }}
     >
-      <HouseIcon className="text-neutral-1 size-5" />
-      <Paperclip className="text-neutral-1 size-5" />
-      <Search className="text-neutral-1 size-5" />
-      <Plus className="text-neutral-1 size-5" />
+      <HouseIcon className="size-5 text-neutral-1" />
+      <Paperclip className="size-5 text-neutral-1" />
+      <Search className="size-5 text-neutral-1" />
+      <Plus className="size-5 text-neutral-1" />
     </motion.div>
   )
 }

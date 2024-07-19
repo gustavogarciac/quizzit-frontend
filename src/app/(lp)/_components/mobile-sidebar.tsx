@@ -22,7 +22,7 @@ export const MobileSidebar = () => {
       </SheetTrigger>
       <SheetContent
         disableSheetClose
-        className="bg-neutral-7 w-full bg-[url('/assets/bg.png')] bg-center p-0"
+        className="w-full bg-neutral-7 bg-[url('/assets/bg.png')] bg-center p-0"
       >
         <SheetHeader className="flex flex-row items-end justify-between gap-1 border-b px-4 py-3">
           <Logo />

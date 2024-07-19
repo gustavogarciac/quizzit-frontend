@@ -9,7 +9,7 @@ type Props = {
 
 export const SocialItem = ({ href, src, alt }: Props) => {
   return (
-    <li className="bg-neutral-7 hover:bg-neutral-6 rounded-full p-1.5">
+    <li className="rounded-full bg-neutral-7 p-1.5 hover:bg-neutral-6">
       <a href={href} target="_blank">
         <Image src={src} width={20} height={20} alt={alt} />
       </a>

@@ -40,7 +40,7 @@ export const HeroSection = () => {
         <div className="flex items-center justify-center">
           <Button
             size="lg"
-            className="hover:text-accents-1 rounded-tr-[15px] font-code text-sm font-bold uppercase"
+            className="rounded-tr-[15px] font-code text-sm font-bold uppercase hover:text-accents-1"
           >
             Get started
           </Button>
@@ -50,9 +50,9 @@ export const HeroSection = () => {
           <HeroBanner />
         </div>
 
-        <div className="from-accents-1 via-accents-6 to-accents-5 blur-xxl pointer-events-none absolute left-1/2 right-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-gradient-to-tr" />
+        <div className="pointer-events-none absolute left-1/2 right-1/2 top-0 h-40 w-40 -translate-x-1/2 rounded-full bg-gradient-to-tr from-accents-1 via-accents-6 to-accents-5 blur-xxl" />
 
-        <div className="from-accents-4 via-accents-4 to-accents-5 blur-xxl pointer-events-none absolute left-60 top-[33%] h-40 w-40 rounded-full bg-gradient-to-tr" />
+        <div className="pointer-events-none absolute left-60 top-[33%] h-40 w-40 rounded-full bg-gradient-to-tr from-accents-4 via-accents-4 to-accents-5 blur-xxl" />
 
         <HeroWidget />
       </div>
