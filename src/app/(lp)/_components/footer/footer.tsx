@@ -9,8 +9,8 @@ import { SocialList } from './_components/social-list'
 export const Footer = () => {
   return (
     <Container otherClasses="pb-0">
-      <div className="grid grid-cols-1 border-b p-8 lg:grid-cols-3">
-        <div className="col-span-2 flex h-full flex-row items-center justify-center gap-6 lg:justify-start">
+      <div className="grid grid-cols-1 border-b p-3.5 sm:p-8 lg:grid-cols-3">
+        <div className="col-span-2 grid h-full grid-cols-1 flex-row items-center justify-center gap-6 lg:flex lg:justify-start">
           <div className="flex flex-col items-start gap-5">
             <span className="text-base font-semibold uppercase text-primary">
               Platform
@@ -37,7 +37,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="h-full w-px border" />
+          <div className="hidden h-full w-px border sm:block" />
 
           <div className="flex flex-col items-start gap-5">
             <span className="text-base font-semibold uppercase text-primary">
@@ -65,7 +65,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="h-full w-px border" />
+          <div className="hidden h-full w-px border sm:block" />
 
           <div className="flex flex-col items-start gap-5">
             <span className="text-base font-semibold uppercase text-primary">
@@ -102,14 +102,16 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-[1fr_2fr] items-center p-8 lg:grid-cols-3">
-        <Logo size="sm" />
+      <div className="grid grid-cols-1 items-center justify-center p-3.5 sm:p-8 md:grid-cols-3 md:justify-between">
+        <div className="mx-auto md:mx-0">
+          <Logo size="sm" />
+        </div>
 
-        <span className="ml-auto font-code text-xs uppercase text-muted-foreground lg:ml-0">
+        <span className="mx-auto mt-4 block font-code text-xs uppercase text-muted-foreground md:mx-0 md:mt-0">
           {new Date().getFullYear()} &copy; Quizzit. All rights reserved.
         </span>
 
-        <div className="col-span-2 mt-4 flex flex-row items-center justify-center gap-4 lg:col-span-1 lg:mt-0">
+        <div className="mt-4 flex flex-row items-center justify-center gap-4 md:mt-0">
           <Link
             href="/privacy-policy"
             className="font-code text-xs uppercase tracking-wide text-muted-foreground transition-colors duration-300 ease-linear hover:text-primary"

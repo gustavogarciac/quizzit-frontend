@@ -14,7 +14,7 @@ export const HeroSection = () => {
         {/* Hero Title */}
         <div className="space-y-5">
           <div className="relative mx-auto w-fit">
-            <h1 className="text-center text-[3.5rem] font-semibold leading-[4rem] tracking-tight">
+            <h1 className="text-center text-[2.5rem] font-semibold leading-[4rem] tracking-tight sm:text-[3.5rem]">
               Explore possibilities and <br /> be an outstanding student with
               <div className="relative ml-3.5 inline-block">
                 {' '}

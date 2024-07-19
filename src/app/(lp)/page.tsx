@@ -4,7 +4,7 @@ import { HeroSection } from './_components/hero-section'
 
 export default function Home() {
   return (
-    <main className="border-bottom px-4">
+    <main className="border-bottom px-1.5 sm:px-4">
       {/* Hero Section */}
       <HeroSection />
 

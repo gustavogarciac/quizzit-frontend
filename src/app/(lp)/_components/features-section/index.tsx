@@ -20,7 +20,7 @@ import { FeatureCard } from './_components/card'
 export const FeaturesSection = () => {
   return (
     <Container>
-      <div className="mt-20 w-full space-y-14 bg-[url('/assets/grid.png')] bg-center px-12">
+      <div className="mt-20 w-full space-y-14 bg-[url('/assets/grid.png')] bg-center px-2 sm:px-12">
         <p className="mx-auto text-center font-sans text-xs uppercase tracking-wide text-muted-foreground">
           Helping thousands to create strong knowledge
         </p>
@@ -53,7 +53,7 @@ export const FeaturesSection = () => {
         </div>
       </div>
 
-      <div className="mt-40 w-full space-y-14 px-12">
+      <div className="mt-40 w-full space-y-14 px-2 sm:px-12">
         <div className="relative w-full overflow-hidden">
           <h2 className="border-bottom bg-top pb-10 text-center text-[3rem] font-semibold">
             Study Smarter, Not Harder

@@ -8,7 +8,7 @@ type Props = {
 
 const LandingPageLayout = ({ children }: Props) => {
   return (
-    <div className="bg-neutral-8 min-h-screen">
+    <div className="bg-neutral-8 min-h-screen overflow-hidden">
       <Header />
       {children}
     </div>
