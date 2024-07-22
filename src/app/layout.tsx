@@ -4,6 +4,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Sora, Source_Code_Pro, Space_Grotesk } from 'next/font/google'
 
+import { Toaster } from '@/components/ui/toaster'
+
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora' })
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -34,6 +36,7 @@ export default function RootLayout({
         className={`dark ${sora.variable} ${spaceGrotesk.variable} ${sourceCodePro.variable} font-sans`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   )

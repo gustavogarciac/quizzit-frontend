@@ -45,7 +45,9 @@ export const Header = () => {
           </span>
         </Link>
 
-        <Button variant={'theme'}>Sign in</Button>
+        <Button variant={'theme'}>
+          <Link href="/auth/sign-in">Sign In</Link>
+        </Button>
       </div>
 
       <div className="block md:hidden">
