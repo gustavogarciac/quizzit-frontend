@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Header } from './_components/header'
+import { MobileNav } from './_components/mobile-nav'
 import { RightSidebar } from './_components/right-sidebar'
 import { Sidebar } from './_components/sidebar'
 
@@ -21,6 +22,7 @@ const DashboardLayout = ({ children }: Props) => {
         </div>
 
         <RightSidebar />
+        <MobileNav />
       </div>
     </div>
   )
