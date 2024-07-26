@@ -15,7 +15,7 @@ import { Progress } from '@/components/ui/progress'
 
 export const RightSidebar = () => {
   return (
-    <aside className="flex h-full flex-col border-l bg-neutral-8">
+    <aside className="fixed right-0 top-[96px] z-50 hidden h-full flex-col border-l bg-neutral-8 xl:flex">
       <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden border-b p-5">
         <Avatar className="h-20 w-20 outline outline-offset-1 outline-accents-1">
           <AvatarImage

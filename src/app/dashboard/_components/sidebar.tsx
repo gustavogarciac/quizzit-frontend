@@ -1,81 +1,37 @@
-import {
-  AudioWaveform,
-  BarChart2,
-  BookmarkCheckIcon,
-  CableIcon,
-  CalendarClock,
-  ChevronsUpDown,
-  MapIcon,
-  MessageCircle,
-  MoonIcon,
-  Settings,
-} from 'lucide-react'
-import React from 'react'
+import { ChevronsUpDown, MessageCircle } from 'lucide-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
+import {
+  lowerNavigationItems,
+  upperNavigationItems,
+} from '@/consts/navigation-items'
+
+import { NavigationItem } from './navigation-item'
 
 export const Sidebar = () => {
   return (
-    <aside className="flex h-full flex-col border-r bg-neutral-8 p-3">
+    <aside className="fixed bottom-0 top-[96px] z-50 hidden flex-col border-r bg-neutral-8 p-3 lg:flex">
       <div className="flex flex-1 flex-col gap-3">
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <BarChart2 className="size-6" />
-          <span className="font-code text-sm font-semibold uppercase">
-            Dashboard
-          </span>
-        </div>
+        {upperNavigationItems.map((item, index) => (
+          <NavigationItem
+            key={`${index}-${item.title}-${item.href}`}
+            icon={item.icon}
+            title={item.title}
+            href={item.href}
+          />
+        ))}
 
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <CableIcon className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            My journey
-          </span>
-        </div>
+        <div className="h-px w-full border" />
 
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <MapIcon className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            Explore questions
-          </span>
-        </div>
-
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <BookmarkCheckIcon className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            My collection
-          </span>
-        </div>
-
-        <div className="my-1 h-px w-full border-b" />
-
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <AudioWaveform className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            Track your progress
-          </span>
-        </div>
-
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <CalendarClock className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            Review
-          </span>
-        </div>
-
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <Settings className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            Settings
-          </span>
-        </div>
-
-        <div className="flex flex-row items-center gap-2 rounded-lg border border-transparent px-5 py-3 text-muted-foreground transition-colors duration-200 ease-in-out hover:border-border hover:bg-neutral-7">
-          <MoonIcon className="size-6 shrink-0" />
-          <span className="font-code text-sm font-semibold uppercase">
-            Theme
-          </span>
-        </div>
+        {lowerNavigationItems.map((item, index) => (
+          <NavigationItem
+            key={`${index}-${item.title}-${item.href}`}
+            icon={item.icon}
+            title={item.title}
+            href={item.href}
+          />
+        ))}
       </div>
 
       <div className="flex flex-col gap-4">
