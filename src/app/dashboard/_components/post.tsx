@@ -6,10 +6,11 @@ import React from 'react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
+import { Skeleton } from '@/components/ui/skeleton'
 
-import { Alternative } from './alternative'
+import { Alternative, AlternativeSkeleton } from './alternative'
 
-export const Post = () => {
+const Post = () => {
   return (
     <div className="w-full max-w-5xl space-y-2 rounded-lg bg-neutral-8 p-4 md:p-8 xl:mx-auto">
       <div className="flex flex-row items-center gap-2">
@@ -102,3 +103,73 @@ export const Post = () => {
     </div>
   )
 }
+
+const PostSkeleton = () => {
+  return (
+    <div className="w-full max-w-5xl space-y-2 rounded-lg bg-neutral-8 p-4 md:p-8 xl:mx-auto">
+      <div className="flex flex-row items-center gap-2">
+        <Skeleton className="h-10 w-10 rounded-full" />
+
+        <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-col gap-1">
+            <Skeleton className="h-4 w-24" />
+
+            <Skeleton className="h-3 w-20" />
+          </div>
+
+          <div className="flex flex-row items-center gap-2">
+            <SlashIcon className="size-4 rotate-[150deg] text-muted-foreground" />
+
+            <Skeleton className="h-3 w-24" />
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-row items-start gap-3">
+        <div className="flex w-full max-w-3xl flex-col gap-1">
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-1/2" />
+            </div>
+
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-1/3" />
+            </div>
+
+            <Skeleton className="h-72 w-96 rounded-2xl" />
+
+            <div className="space-y-2">
+              <Skeleton className="h-4 w-full" />
+              <Skeleton className="h-4 w-2/3" />
+            </div>
+
+            <div className="mt-4 flex flex-col gap-3">
+              <AlternativeSkeleton />
+              <AlternativeSkeleton />
+              <AlternativeSkeleton />
+              <AlternativeSkeleton />
+            </div>
+          </div>
+
+          <div className="mt-3 flex flex-row flex-wrap items-center gap-3">
+            <Skeleton className="h-4 w-24" />
+            <Skeleton className="h-4 w-28" />
+            <Skeleton className="h-4 w-16" />
+            <Skeleton className="h-4 w-20" />
+            <Skeleton className="h-4 w-24" />
+          </div>
+
+          <div className="mt-2 flex flex-row items-center gap-8">
+            <Skeleton className="h-4 w-12" />
+            <Skeleton className="h-4 w-12" />
+            <Skeleton className="h-4 w-12" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export { Post, PostSkeleton }

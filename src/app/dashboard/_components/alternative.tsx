@@ -4,6 +4,7 @@ import { XIcon } from 'lucide-react'
 import React, { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 import { cn } from '@/lib/utils'
 
 type Props = {
@@ -64,4 +65,8 @@ const Alternative = ({ text, identificator }: Props) => {
   )
 }
 
-export { Alternative }
+const AlternativeSkeleton = () => {
+  return <Skeleton className="min-h-12 w-full rounded-xl" />
+}
+
+export { Alternative, AlternativeSkeleton }
