@@ -17,7 +17,7 @@ const DashboardLayout = ({ children }: Props) => {
       <div className="relative flex min-h-screen flex-col gap-3">
         <Sidebar />
 
-        <div className="flex-1 bg-[url('/assets/stars.svg')] bg-center px-3 pt-[110px] sm:px-[30px] lg:pl-[300px] lg:pt-[130px] xl:pr-[300px]">
+        <div className="flex flex-1 flex-col bg-[url('/assets/stars.svg')] bg-center px-3 pt-[110px] sm:px-[30px] lg:pl-[300px] lg:pt-[130px] xl:pr-[300px]">
           {children}
         </div>
 

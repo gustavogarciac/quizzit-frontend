@@ -8,7 +8,7 @@ export const MobileNav = () => {
   )
 
   return (
-    <div className="fixed inset-x-0 bottom-0 flex flex-row items-center justify-evenly rounded-t-xl border border-border bg-neutral-8 bg-[url('/assets/bg.png')] p-4 lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 flex flex-row items-center justify-evenly rounded-t-xl border border-border bg-neutral-8 bg-[url('/assets/bg.png')] p-4 lg:hidden">
       {navigationItems.map((item, index) => (
         <MobileNavigationItem
           key={`mobile-nav-item-${index}-${item.title}`}

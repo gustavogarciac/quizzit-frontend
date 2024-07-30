@@ -1,4 +1,4 @@
-import { ChevronsUpDown, SearchIcon } from 'lucide-react'
+import { ChevronsUpDown, PlusIcon, SearchIcon } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -27,7 +27,7 @@ export const Header = () => {
 
         <div className="hidden flex-row items-center gap-5 lg:flex xl:justify-self-end">
           <Button variant="theme" asChild>
-            <Link href="/create-question">Create a Question</Link>
+            <Link href="/dashboard/questions/new">Create a Question</Link>
           </Button>
           <div className="flex flex-row items-center gap-3">
             <Button variant="ghost" className="aspect-auto gap-2 py-6">
@@ -44,7 +44,18 @@ export const Header = () => {
           </div>
         </div>
 
-        <MobileMenu />
+        <div className="flex flex-row items-center gap-3 lg:hidden">
+          <Button variant="theme">
+            <Link
+              href="/dashboard/questions/new"
+              className="flex flex-row items-center gap-1.5"
+            >
+              <PlusIcon className="size-5" />
+              <span className="sr-only sm:not-sr-only">New Question</span>
+            </Link>
+          </Button>
+          <MobileMenu />
+        </div>
       </div>
     </header>
   )

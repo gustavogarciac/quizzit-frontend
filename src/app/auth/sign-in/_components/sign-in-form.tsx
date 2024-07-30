@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { ChromeIcon } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/ui/button'
@@ -22,6 +23,7 @@ import { signInSchema, signInSchemaType } from '@/schemas/sign-in'
 import { signInAction } from '../actions'
 
 export const SignInForm = () => {
+  const router = useRouter()
   const form = useForm<signInSchemaType>({
     resolver: zodResolver(signInSchema),
     defaultValues: {
@@ -37,6 +39,7 @@ export const SignInForm = () => {
         title: message,
         description: 'You will be redirected to the main dashboard.',
       })
+      router.push('/dashboard')
     } catch (err) {
       form.setError('email', {
         type: 'manual',
