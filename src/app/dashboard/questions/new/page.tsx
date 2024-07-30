@@ -5,7 +5,9 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { Meteors } from '@/components/ui/meteors'
 
-const NewQuestion = () => {
+const NewQuestion = async () => {
+  await new Promise((resolve) => setTimeout(resolve, 4000))
+
   return (
     <div className="grid-cols- relative mb-[110px] flex h-full w-full flex-1 flex-col gap-4 bg-[url('/assets/grid.png')] lg:mb-[30px]">
       <div className="pointer-events-none absolute bottom-1/2 left-1/2 right-1/2 top-1/2 z-10 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-accents-2 via-accents-3 to-accents-4 blur-xxl" />
