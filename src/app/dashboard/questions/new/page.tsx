@@ -1,5 +1,6 @@
 import { LockIcon, SparklesIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -9,7 +10,7 @@ const NewQuestion = async () => {
   await new Promise((resolve) => setTimeout(resolve, 4000))
 
   return (
-    <div className="grid-cols- relative mb-[110px] flex h-full w-full flex-1 flex-col gap-4 bg-[url('/assets/grid.png')] lg:mb-[30px]">
+    <div className="relative mb-[110px] flex h-full w-full flex-1 flex-col gap-4 bg-[url('/assets/grid.png')] lg:mb-[30px]">
       <div className="pointer-events-none absolute bottom-1/2 left-1/2 right-1/2 top-1/2 z-10 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-accents-2 via-accents-3 to-accents-4 blur-xxl" />
 
       <div className="pointer-events-none absolute bottom-0 right-0 z-10 h-40 w-40 rounded-full bg-gradient-to-tr from-accents-1 via-accents-6 to-accents-5 blur-xxl" />
@@ -36,7 +37,11 @@ const NewQuestion = async () => {
             Create your own questions to test your knowledge. We do the rest.
           </p>
           <div className="mt-3 flex justify-end">
-            <Button variant={'theme'}>Create manual question</Button>
+            <Button variant={'theme'} asChild>
+              <Link href="/dashboard/questions/new/objective">
+                Create Manual Question
+              </Link>
+            </Button>
           </div>
         </div>
 
