@@ -5,6 +5,7 @@ import React from 'react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
+import { Skeleton } from '@/components/ui/skeleton'
 
 type Props = {
   data: {
@@ -111,6 +112,21 @@ export const ObjectiveQuestionPreview = ({ data }: Props) => {
           )}
         </div>
       </div>
+    </div>
+  )
+}
+
+export const ObjectiveQuestionPreviewSkeleton = () => {
+  return (
+    <div className="h-fit min-w-[305px] rounded-xl border bg-neutral-8 p-6 shadow-sm">
+      <div className="flex flex-col gap-2">
+        <Skeleton className="h-6 w-1/3" />
+
+        <Skeleton className="h-3 w-full" />
+        <Skeleton className="h-3 w-1/2" />
+      </div>
+
+      <Skeleton className="mt-3 min-h-72 w-full" />
     </div>
   )
 }
