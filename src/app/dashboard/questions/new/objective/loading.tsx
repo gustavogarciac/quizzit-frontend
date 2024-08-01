@@ -6,7 +6,7 @@ import { ObjectiveQuestionPreviewSkeleton } from './_components/objective-questi
 
 const ObjectiveQuestionLoadingPage = () => {
   return (
-    <div className="relative z-10 grid grid-cols-1 gap-8 sm:grid-cols-[2fr_1fr]">
+    <div className="relative z-10 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
       <div className="rounded-xl border bg-neutral-8 p-6 shadow-sm">
         <div className="flex flex-col gap-2">
           <Skeleton className="h-6 w-full" />

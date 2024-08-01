@@ -5,7 +5,9 @@ import React from 'react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
+import { Input } from '@/components/ui/input'
 import { Skeleton } from '@/components/ui/skeleton'
+import { cn } from '@/lib/utils'
 
 type Props = {
   data: {
@@ -14,11 +16,21 @@ type Props = {
     title?: string | undefined
     image?: string | undefined
     context?: string | undefined
+    alternatives: string[]
+    correctAlternative: 'A' | 'B' | 'C' | 'D'
   }
 }
 
 export const ObjectiveQuestionPreview = ({ data }: Props) => {
-  const { title, context, statement, subject, image } = data
+  const {
+    title,
+    context,
+    statement,
+    subject,
+    image,
+    alternatives,
+    correctAlternative,
+  } = data
 
   return (
     <div className="h-fit rounded-xl border bg-neutral-8 p-6 shadow-sm">
@@ -99,6 +111,34 @@ export const ObjectiveQuestionPreview = ({ data }: Props) => {
               <div className="h-2 w-1/3 rounded-lg bg-neutral-5" />
             </div>
           )}
+
+          {alternatives.map((alternative, index) => {
+            const alternativeIdentificator = String.fromCharCode(65 + index)
+            const isCorrect = alternativeIdentificator === correctAlternative
+            return (
+              <div key={`alternative_skeleton_${index}`}>
+                <div
+                  className={cn(
+                    'flex w-2/3 flex-row items-center',
+                    isCorrect && 'rounded-sm border border-accents-4/60',
+                  )}
+                >
+                  <span className="h-4 rounded-sm rounded-r-none border bg-neutral-7 px-1.5 font-code text-[10px]">
+                    {String.fromCharCode(65 + index)}
+                  </span>
+                  {alternative !== '' ? (
+                    <Input
+                      value={alternative}
+                      disabled
+                      className="h-4 rounded-l-none px-1 text-xs"
+                    />
+                  ) : (
+                    <div className="h-4 w-full rounded-r-sm bg-neutral-5" />
+                  )}
+                </div>
+              </div>
+            )
+          })}
 
           {subject ? (
             <Badge

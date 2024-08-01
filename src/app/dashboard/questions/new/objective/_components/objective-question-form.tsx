@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Button } from '@/components/ui/button'
@@ -28,9 +28,25 @@ import {
   ObjectiveQuestionFormType,
 } from '@/schemas/objective-question'
 
+import { Alternative } from './alternative'
 import { ObjectiveQuestionPreview } from './objective-question-preview'
 
+export enum AlternativeOption {
+  A = 'A',
+  B = 'B',
+  C = 'C',
+  D = 'D',
+}
+
 export const ObjectiveQuestionForm = () => {
+  const [alternativeA, setAlternativeA] = useState('')
+  const [alternativeB, setAlternativeB] = useState('')
+  const [alternativeC, setAlternativeC] = useState('')
+  const [alternativeD, setAlternativeD] = useState('')
+  const [correctAlternative, setCorrectAlternative] = useState<
+    'A' | 'B' | 'C' | 'D'
+  >('A')
+
   const form = useForm<ObjectiveQuestionFormType>({
     resolver: zodResolver(objectiveQuestionFormSchema),
     defaultValues: {
@@ -57,8 +73,38 @@ export const ObjectiveQuestionForm = () => {
     }
   }
 
+  function handleSubmit(data: ObjectiveQuestionFormType) {
+    const alternatives = [
+      {
+        alternative: 'A',
+        text: alternativeA,
+        isCorrect: correctAlternative === 'A',
+      },
+      {
+        alternative: 'B',
+        text: alternativeB,
+        isCorrect: correctAlternative === 'B',
+      },
+      {
+        alternative: 'C',
+        text: alternativeC,
+        isCorrect: correctAlternative === 'C',
+      },
+      {
+        alternative: 'D',
+        text: alternativeD,
+        isCorrect: correctAlternative === 'D',
+      },
+    ]
+
+    console.log({
+      ...data,
+      alternatives,
+    })
+  }
+
   return (
-    <div className="relative z-10 grid grid-cols-1 gap-8 sm:grid-cols-[2fr_1fr]">
+    <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]">
       <div className="rounded-xl border bg-neutral-8 p-6 shadow-sm">
         <h1 className="font-grotesk text-2xl font-semibold leading-relaxed tracking-tight">
           Create an Objective Question
@@ -70,10 +116,10 @@ export const ObjectiveQuestionForm = () => {
 
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(() => {})}
-            className="mt-10 flex flex-col gap-3"
+            onSubmit={form.handleSubmit(handleSubmit)}
+            className="mt-10 flex flex-col gap-4"
           >
-            <div className="grid grid-cols-[1fr_1fr] gap-2">
+            <div className="grid grid-cols-[1fr_1fr] gap-4">
               <FormField
                 name="title"
                 control={form.control}
@@ -209,6 +255,42 @@ export const ObjectiveQuestionForm = () => {
               )}
             />
 
+            <div className="flex flex-col gap-2">
+              <span className="text-sm text-primary">Alternatives</span>
+
+              <Alternative
+                setText={setAlternativeA}
+                text={alternativeA}
+                correctAlternative={correctAlternative}
+                alternative="A"
+                set={setCorrectAlternative}
+              />
+
+              <Alternative
+                setText={setAlternativeB}
+                text={alternativeB}
+                correctAlternative={correctAlternative}
+                alternative="B"
+                set={setCorrectAlternative}
+              />
+
+              <Alternative
+                setText={setAlternativeC}
+                text={alternativeC}
+                correctAlternative={correctAlternative}
+                alternative="C"
+                set={setCorrectAlternative}
+              />
+
+              <Alternative
+                setText={setAlternativeD}
+                text={alternativeD}
+                correctAlternative={correctAlternative}
+                alternative="D"
+                set={setCorrectAlternative}
+              />
+            </div>
+
             <div className="flex flex-row justify-end">
               <Button
                 variant="theme"
@@ -229,6 +311,13 @@ export const ObjectiveQuestionForm = () => {
           statement: form.watch('statement'),
           subject: form.watch('subject'),
           image: form.watch('image'),
+          alternatives: [
+            alternativeA,
+            alternativeB,
+            alternativeC,
+            alternativeD,
+          ],
+          correctAlternative,
         }}
       />
     </div>
