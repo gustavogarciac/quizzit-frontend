@@ -28,7 +28,7 @@ export const upperNavigationItems = [
   {
     icon: <BookmarkCheckIcon className="size-6 shrink-0" />,
     title: 'My collection',
-    href: '/dashboard/collection',
+    href: '/dashboard/my-collection',
   },
   {
     icon: <AudioWaveform className="size-6 shrink-0" />,
